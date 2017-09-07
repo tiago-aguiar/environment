@@ -1,0 +1,30 @@
+cd ~/python/iosblog/
+source bin/activate
+source bin/activate_this.py
+source bin/activate
+ls
+cd ~/.emacs.d/
+cd ..
+cp -R .emacs.d ~/.dotfiles/
+çs
+ls
+clear
+
+clear
+
+ll
+ls -al
+clear
+
+ls -al
+:q
+clear
+
+ll
+clear
+
+ll
+clear
+
+exit
+exit
