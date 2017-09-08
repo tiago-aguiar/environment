@@ -28,12 +28,18 @@
   (require 'init-completion)
   (require 'init-syntax)
   (require 'init-theme)
+  (require 'fic-mode)
   (require 'init-markdown))
 
-(setq exec-path (append exec-path '("/Users/tiagoaguiar/Desktop/SourceKittenDaemon")))
-
+;; (setq exec-path (append exec-path '("/Users/tiagoaguiar/Desktop/SourceKittenDaemon")))
 ;; (require 'company-sourcekit)
 ;; (add-to-list 'company-backends 'company-sourcekit)
+;; Set the buffer size to 64K on windows (from the original 4K)
+(if (>= emacs-major-version 25)
+      (setq w32-pipe-buffer-size (* 64 1024)))
+
+
+
 
 (provide 'init)
 

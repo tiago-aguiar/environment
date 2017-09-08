@@ -11,3 +11,5 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 rm -rf ~/.zshrc
 echo "Installing Emacs.."
 apt-get install emacs -y
+echo "Installing Eclipse Oxygen.."
+wget -c http://eclipse.c3sl.ufpr.br/technology/epp/downloads/release/oxygen/R/eclipse-jee-oxygen-R-linux-gtk-x86_64.tar.gz -O /opt/eclipse.tar.gz
