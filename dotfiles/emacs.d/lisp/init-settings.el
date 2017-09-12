@@ -18,7 +18,7 @@
 
 (global-set-key [f1] 'shell)
 (setq explicit-shell-file-name "/bin/zsh")
-(setq x-select-enable-clipboard nil)
+;;(setq x-select-enable-clipboard nil)
 
 ;; C-x C-f file list vertically
 (use-package ido-vertical-mode
