@@ -11,6 +11,6 @@
 ;; theme
 (if window-system
     (load-theme 'gruvbox-light-medium t)
-  (load-theme 'wombat t))
+  (load-theme 'gruvbox-light-medium t))
 
 (provide 'theme)

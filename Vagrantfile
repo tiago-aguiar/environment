@@ -11,10 +11,10 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8000, host: 8000
   config.vm.network "forwarded_port", guest: 4000, host: 4000
   config.vm.network "forwarded_port", guest: 80, host: 8081
-  config.vm.synced_folder "../cpp", "/vagrant_cpp"
+  config.vm.synced_folder "../python/iosblog", "/vagrant_iosblog"
   
   config.vm.provider "virtualbox" do |vb|
-    vb.gui = true 
+    # vb.gui = true 
     vb.memory = "2048"
   end
 
@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
   #   apt-get install ubuntu-desktop -y
   # SHELL
 
-  config.vm.provision "shell", path: "install.sh"
+  # config.vm.provision "shell", path: "install.sh"
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
