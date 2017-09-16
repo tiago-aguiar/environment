@@ -1,43 +1,55 @@
-;; -*- coding: utf-8 -*-
+;; init.el --- Emacs configuration
 
+;; INSTALL PACKAGES
+;; --------------------------------------
+(require 'package)
 (setq package-enable-at-startup nil)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
-;; load my custom
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'custom-theme-load-path (expand-file-name "themes" user-emacs-directory))
-
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file 'noerror)
-
-;; automatically install packages
+;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(eval-when-compile
-  (require 'use-package))
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents))
 
-;; packages
-(let ((file-name-handler-alist nil))
-  (require 'init-elpa)
-  (require 'init-settings)
-  (require 'init-evil)
-  (require 'init-line)
-  (require 'init-completion)
-  (require 'init-syntax)
-  (require 'init-theme)
-  (require 'fic-mode)
-  (require 'init-markdown))
+(defvar myPackages
+   '(better-defaults))
 
-;; (setq exec-path (append exec-path '("/Users/tiagoaguiar/Desktop/SourceKittenDaemon")))
-;; (require 'company-sourcekit)
-;; (add-to-list 'company-backends 'company-sourcekit)
-;; Set the buffer size to 64K on windows (from the original 4K)
-(if (>= emacs-major-version 25)
-      (setq w32-pipe-buffer-size (* 64 1024)))
+(mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
+
+;;(setq package-enable-at-startup nil)
+
+;; ;; BASIC CUSTOMIZATION
+;; ;; --------------------------------------
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+(require 'use-package)
+(require 'settings)
+(require 'gui)
+(require 'org)
+(require 'fic-mode)
+(require 'theme)
+(require 'markdown)
+(require 'evil-mode)
+(require 'completion)
+
+;; programming-language
+(use-package swift-mode
+  :ensure t)
+
+(use-package gradle-mode
+  :ensure t
+  :config
+  (add-hook 'java-mode-hook 'lambda() (gradle-mode 1)))
 
 (provide 'init)
-
-;;; init.el
