@@ -6,6 +6,10 @@
 ;; (split-window-horizontally)
 ;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; (when (window-system)
+;;   (set-frame-height (selected-frame) 120)
+;;   (set-frame-position (selected-frame) 100 30))
+
 (setq inhibit-startup-message t
       inhibit-splash-screen t
       inhibit-startup-echo-area-message t)
