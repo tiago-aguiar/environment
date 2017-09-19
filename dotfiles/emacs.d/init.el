@@ -58,8 +58,20 @@
   :config
   (add-hook 'java-mode-hook 'lambda() (gradle-mode 1)))
 
+;; php
+(use-package php-mode
+  :ensure t)
+
+;; web
+(use-package web-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+  (add-hook 'web-mode-hook 'remove-dos-eol))
+
 (elpy-enable)
-(elpy-use-ipython)
+;;(elpy-use-ipython)
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)

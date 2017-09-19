@@ -4,7 +4,7 @@
 (setq frame-title-format "tiago@emacs") ;; title bar
 
 ;; (split-window-horizontally)
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (setq inhibit-startup-message t
       inhibit-splash-screen t
@@ -36,6 +36,13 @@
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
+
+;; remove ^M character of MS-DOS Windows
+(defun remove-dos-eol ()
+  "Do not show ^M in files containing mixed UNIX and DOS line endings."
+  (interactive)
+  (setq buffer-display-table (make-display-table))
+  (aset buffer-display-table ?\^M []))
 
 ;; Vertical list file 
 (use-package ido-vertical-mode
