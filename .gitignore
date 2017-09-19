@@ -1,6 +1,8 @@
 *.log
 .vagrant/
 .DS_Store
+**/.python-environments/
+**/ido.last
 
 # Created by https://www.gitignore.io/api/emacs
 
