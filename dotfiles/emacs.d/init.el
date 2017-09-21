@@ -71,7 +71,7 @@
   (add-hook 'web-mode-hook 'remove-dos-eol))
 
 (elpy-enable)
-;;(elpy-use-ipython)
+(elpy-use-ipython)
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)
