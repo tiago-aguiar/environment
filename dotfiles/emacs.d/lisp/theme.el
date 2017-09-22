@@ -6,7 +6,7 @@
 (require 'gruvbox-theme)
 
 (set-face-attribute 'default nil :font "Source Code Pro")
-(set-frame-font "Source Code Pro" nil t)
+(set-frame-font "Source Code Pro Light-10" nil t)
 
 ;; theme
 (if window-system
