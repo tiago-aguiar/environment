@@ -71,7 +71,20 @@
   (add-hook 'web-mode-hook 'remove-dos-eol))
 
 (elpy-enable)
-(elpy-use-ipython)
+
+;; check OS type
+(cond
+ ((string-equal system-type "windows-nt") ; Microsoft Windows
+  (progn
+    (message "Microsoft Windows")))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (progn
+    (message "Mac OS X")))
+ ((string-equal system-type "gnu/linux") ; linux
+  (progn
+    (message "Linux")
+    (elpy-use-ipython)))
+ )
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)
