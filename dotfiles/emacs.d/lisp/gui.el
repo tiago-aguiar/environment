@@ -1,10 +1,10 @@
 ;; gui.el
 ;; Essentials GUI Emacs
 
-(setq frame-title-format "tiago@emacs") ;; title bar
+(setq frame-title-format "Tiago Emacs") ;; title bar
 
-;; (split-window-horizontally)
-;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
+(split-window-horizontally)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; (when (window-system)
 ;;   (set-frame-height (selected-frame) 120)
@@ -60,19 +60,19 @@
 (use-package powerline
   :ensure t
   :config
-  (powerline-default-theme))
+  (powerline-center-evil-theme))
 
-(use-package telephone-line
-  :ensure t)
-
-(require 'telephone-line)
-(setq telephone-line-primary-left-separator 'telephone-line-cubed-left
-      telephone-line-secondary-left-separator 'telephone-line-cubed-hollow-left
-      telephone-line-primary-right-separator 'telephone-line-cubed-right
-      telephone-line-secondary-right-separator 'telephone-line-cubed-hollow-right)
-(setq telephone-line-height 24
-      telephone-line-evil-use-short-tag t)
-(telephone-line-mode 1)
+ ;; (use-package telephone-line
+ ;;   :ensure t)
+ ;; 
+ ;; (require 'telephone-line)
+ ;; (setq telephone-line-primary-left-separator 'telephone-line-cubed-left
+ ;;       telephone-line-secondary-left-separator 'telephone-line-cubed-hollow-left
+ ;;       telephone-line-primary-right-separator 'telephone-line-cubed-right
+ ;;       telephone-line-secondary-right-separator 'telephone-line-cubed-hollow-right)
+ ;; (setq telephone-line-height 24
+ ;;       telephone-line-evil-use-short-tag t)
+ ;; (telephone-line-mode 1)
 
 (provide 'gui)
 ;; gui.el ends here
