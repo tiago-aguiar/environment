@@ -5,7 +5,7 @@
 
 (require 'gruvbox-theme)
 
-(set-face-attribute 'default nil :font "Source Code Pro 14")
+(set-face-attribute 'default nil :font "Source Code Pro 10")
 (set-frame-font "Source Code Pro" nil t)
 
 ;; theme
@@ -13,6 +13,6 @@
 ;;     (load-theme 'gruvbox-light-medium t)
 ;;   (load-theme 'gruvbox-dark-medium t))
 
-(load-theme 'gruvbox-dark-medium t)
+(load-theme 'gruvbox-light-medium t)
 
 (provide 'theme)
