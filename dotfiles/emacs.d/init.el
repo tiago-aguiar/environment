@@ -32,17 +32,15 @@
       (package-install package)))
       myPackages)
 
-;;(setq package-enable-at-startup nil)
-
 ;; ;; BASIC CUSTOMIZATION
 ;; ;; --------------------------------------
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'use-package)
 (require 'settings)
-(require 'gui)
 (require 'my-org-mode)
 (require 'fic-mode)
+(require 'gui)
 (require 'theme)
 (require 'markdown)
 (require 'evil-mode)
@@ -76,15 +74,25 @@
 (cond
  ((string-equal system-type "windows-nt") ; Microsoft Windows
   (progn
-    (message "Microsoft Windows")))
+    (message "Microsoft Windows")
+    )
+  )
+
  ((string-equal system-type "darwin") ; Mac OS X
   (progn
-    (message "Mac OS X")))
+    (message "Mac OS X")
+    (set-face-attribute 'default nil :font "Source Code Pro 12")
+    )
+  )
+
  ((string-equal system-type "gnu/linux") ; linux
   (progn
     (message "Linux")
-    (elpy-use-ipython)))
- )
+    (elpy-use-ipython)
+    )
+  )
+
+ ) ;; end cond
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)

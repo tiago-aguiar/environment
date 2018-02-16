@@ -1,8 +1,0 @@
-* Tasks
-** TODO Some task
-*** Another task
-** TODO Another task
-** TODO asdads
-** DONE adasd
-** SOMEDAY asdasd
-** WAITING asdasd 

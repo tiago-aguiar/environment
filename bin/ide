@@ -1,9 +1,9 @@
 #!/bin/zsh -f
 
-if [ -z "$@" ]; then
+if [ -z "$1" ]; then
    file=`pwd`
 else
-   file="$@"
+   file="$1"
 fi
 
-emacs $file &
+emacs $file
