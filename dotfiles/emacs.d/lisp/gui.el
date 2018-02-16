@@ -33,6 +33,13 @@
 (define-key global-map "\ef" 'find-file) ;; M-x F
 (define-key global-map "\eF" 'find-file-other-window) ;; M-x SHIFT F
 
+;; bufferfiles
+(define-key global-map "\eb" 'ido-switch-buffer) ;; M-x B
+(define-key global-map "\eB" 'ido-switch-buffer-other-window) ;; M-x SHIFT B
+
+;; killfiles
+(define-key global-map "\ek" 'ido-kill-buffer) ;; M-x K
+
 (column-number-mode t)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
