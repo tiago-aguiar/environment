@@ -1,4 +1,4 @@
-# Development Environment for Linux
+# Development Environment
 
 Execute `install.sh` followed `linkall.zsh -f`
 
