@@ -3,7 +3,7 @@
 (defun air--config-evil ()
   "Configure evil mode"
 
-  (setq evil-normal-state-cursor '(box "blue")
+  (setq evil-normal-state-cursor '(box "green")
 	evil-insert-state-cursor '(box "red"))
 
   (evil-define-key 'normal global-map (kbd "C-h")  'windmove-left)
