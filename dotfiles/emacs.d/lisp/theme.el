@@ -16,6 +16,19 @@
 (set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "orange")
 
+(defun tiago-custom-swift-mode ()
+  (set-face-attribute 'font-lock-function-name-face nil :foreground "white")
+  (set-face-attribute 'font-lock-keyword-face nil :foreground "#eca72c")
+  (set-face-attribute 'font-lock-preprocessor-face nil :foreground "red")
+)
+
+(defun tiago-custom-python-mode ()
+  (set-face-attribute 'font-lock-comment-face nil :foreground "yellow")
+)
+
+(add-hook 'swift-mode-hook 'tiago-custom-swift-mode)
+(add-hook 'python-mode-hook 'tiago-custom-python-mode)
+
 (set-frame-font "Source Code Pro" nil t)
 
 (provide 'theme)
