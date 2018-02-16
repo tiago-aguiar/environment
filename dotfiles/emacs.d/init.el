@@ -32,17 +32,15 @@
       (package-install package)))
       myPackages)
 
-;;(setq package-enable-at-startup nil)
-
 ;; ;; BASIC CUSTOMIZATION
 ;; ;; --------------------------------------
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'use-package)
 (require 'settings)
-(require 'gui)
 (require 'my-org-mode)
 (require 'fic-mode)
+(require 'gui)
 (require 'theme)
 (require 'markdown)
 (require 'evil-mode)
