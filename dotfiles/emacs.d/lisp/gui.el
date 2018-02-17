@@ -7,8 +7,8 @@
 (setq tiago-linux (featurep 'x))
 (setq tiago-win32 (not (or tiago-aquamacs tiago-linux)))
 
-(setq tiago-todo-file "w:/code/todo.txt")
-(setq tiago-log-file "w:/code/log.txt")
+(setq tiago-todo-file "~/todo.org")
+(setq tiago-log-file "~/log.txt")
 
 (split-window-horizontally)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
@@ -82,7 +82,8 @@
 ;; Hacks
 (setq undo-limit 20000000)
 (setq undo-strong-limit 40000000)
-(setq x-select-enable-clipboard nil) ;; fix error clipboard
+(setq x-select-enable-clipboard t) ;; fix error clipboard
+;;(setq x-select-enable-clipboard nil) ;; fix error clipboard
 
 (setq tab-width 4)
 (setq-default indent-tabs-mode nil) 

@@ -44,8 +44,8 @@
 (require 'theme)
 (require 'markdown)
 (require 'evil-mode)
-(require 'completion)
 (require 'jedi-python)
+(require 'completion)
 
 ;; programming-language
 (use-package swift-mode
@@ -117,4 +117,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(org-done ((t (:foreground "lawn green" :weight bold))))
+ '(org-level-2 ((t (:inherit default))))
+ '(org-todo ((t (:foreground "red" :weight bold))))
+ '(secondary-selection ((t (:background "black")))))

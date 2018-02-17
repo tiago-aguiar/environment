@@ -8,6 +8,8 @@
                              (org-bullets-mode 1)
                              )))
 
+(setq org-log-done 'time) ;; set CLOSED when done
+
 ;;(require 'org-bullets)
 
 (provide 'my-org-mode)

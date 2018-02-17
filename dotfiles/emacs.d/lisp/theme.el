@@ -6,7 +6,7 @@
 ;; (require 'gruvbox-theme)
 ;; (load-theme 'gruvbox-dark-medium t)
 
-(set-face-attribute 'default nil :font "Source Code Pro 11")
+(set-face-attribute 'default nil :font "Source Code Pro 10")
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#DAB98F")
 (set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
 (set-face-attribute 'font-lock-constant-face nil :foreground "olive drab")
