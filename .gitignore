@@ -12,6 +12,7 @@
 \#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
+eshell
 *.elc
 auto-save-list
 tramp
