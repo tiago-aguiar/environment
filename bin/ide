@@ -6,4 +6,4 @@ else
    file="$1"
 fi
 
-emacs $file
+emacs $file &
