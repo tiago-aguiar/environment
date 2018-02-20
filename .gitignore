@@ -12,7 +12,8 @@
 \#*\#
 /.emacs.desktop
 /.emacs.desktop.lock
-eshell
+dotfiles/emacs.d/eshell/history
+dotfiles/emacs.d/eshell/lastdir
 *.elc
 auto-save-list
 tramp

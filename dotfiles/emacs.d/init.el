@@ -81,7 +81,7 @@
  ((string-equal system-type "darwin") ; Mac OS X
   (progn
     (message "Mac OS X")
-    (set-face-attribute 'default nil :font "Source Code Pro 12")
+    ;; (set-face-attribute 'default nil :font "Source Code Pro 12")
     )
   )
 
