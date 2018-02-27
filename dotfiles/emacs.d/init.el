@@ -1,14 +1,12 @@
 ;; init.el --- Emacs configuration
 
-;; INSTALL PACKAGES
-;; ----------------
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
-;; Bootstrap use-package
-(unless (package-installed-p 'use-package)
+
+(unless (package-installed-p 'use-package) ;; Bootstrap use-package
   (package-refresh-contents)
   (package-install 'use-package))
 
@@ -33,21 +31,57 @@
 ;;       (package-install package)))
 ;;       myPackages)
 
-;; ;; BASIC CUSTOMIZATION
-;; ;; --------------------------------------
+(setq tiago-mac (string-equal system-type "darwin"))
+(setq tiago-linux (string-equal system-type "gnu/linux"))
+(setq tiago-win32 (not (or tiago-mac tiago-linux)))
+
+(setq tiago-todo-file "~/todo.org")
+(setq tiago-log-file "~/log.txt")
+
+
+(defun load-todo ()
+  (interactive)
+  (find-file tiago-todo-file))
+
+
+(defun insert-timeofday ()
+  (interactive "*")
+  (insert (format-time-string "----------------- %a, %d %b %y: %I:%M%p")))
+
+
+(defun load-log ()
+  (interactive)
+  (find-file tiago-log-file)
+  (end-of-buffer)
+  (newline-and-indent)
+  (insert-timeofday)
+  (newline-and-indent)
+  (newline-and-indent)
+  (end-of-buffer))
+
 
 (require 'use-package)
-(require 'settings)
-(require 'my-org-mode)
+(require 'taguiar-settings)
 (require 'fic-mode)
-(require 'gui)
-(require 'theme)
+(require 'taguiar-gui)
+(require 'taguiar-theme)
 (require 'markdown)
 (require 'evil-mode)
 (require 'jedi-python)
 (require 'completion)
+(require 'taguiar-orgmode)
 (require 'taguiar-java)
 (require 'taguiar-swift)
+
+(when tiago-linux
+  (setq tiago-makescript "./build.linux")
+  (message "Linux running")
+  (display-battery-mode 1)
+  )
+
+(when tiago-mac
+  (message "MacOSX running")
+  )
 
 ;; php
 (use-package php-mode
@@ -64,28 +98,28 @@
 ;; (elpy-enable)
 
 ;; check OS type
-(cond
- ((string-equal system-type "windows-nt") ; Microsoft Windows
-  (progn
-    (message "Microsoft Windows")
-    )
-  )
-
- ((string-equal system-type "darwin") ; Mac OS X
-  (progn
-    (message "Mac OS X")
-    ;; (set-face-attribute 'default nil :font "Source Code Pro 12")
-    )
-  )
-
- ((string-equal system-type "gnu/linux") ; linux
-  (progn
-    (message "Linux")
-    (elpy-use-ipython)
-    )
-  )
-
- ) ;; end cond
+;; (cond
+;;  ((string-equal system-type "windows-nt") ; Microsoft Windows
+;;   (progn
+;;     (message "Microsoft Windows")
+;;     )
+;;   )
+;; 
+;;  ((string-equal system-type "darwin") ; Mac OS X
+;;   (progn
+;;     (message "Mac OS X")
+;;     ;; (set-face-attribute 'default nil :font "Source Code Pro 12")
+;;     )
+;;   )
+;; 
+;;  ((string-equal system-type "gnu/linux") ; linux
+;;   (progn
+;;     (message "Linux")
+;;     (elpy-use-ipython)
+;;     )
+;;   )
+;; 
+;;  ) ;; end cond
 
 ;; use flycheck not flymake with elpy
 ;; (when (require 'flycheck nil t)
