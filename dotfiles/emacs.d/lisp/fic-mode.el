@@ -33,8 +33,7 @@
 ;; NOTE: If you manually turn on fic-mode, you you might need to force re-fontification initially
 ;;   M-x font-lock-fontify-buffer
 
-(add-hook 'c++-mode-hook '(lambda () (fic-mode 1)))
-(add-hook 'swift-mode-hook '(lambda () (fic-mode 1)))
+(add-hook 'after-init-hook (lambda() (fic-mode 1)))
 
 (defcustom fic-highlighted-words '("FIXME" "TODO" "BUG" "HACK")
   "Words to highlight"

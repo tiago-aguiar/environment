@@ -4,7 +4,6 @@
 (use-package org-bullets
   :ensure t
   :config
-  :requires org-bullets
   (add-hook 'org-mode-hook (lambda ()
                              (org-bullets-mode 1)
                              )))
