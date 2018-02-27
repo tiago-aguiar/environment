@@ -22,6 +22,7 @@
 (set-face-attribute 'font-lock-string-face nil :foreground "olive drab")
 (set-face-attribute 'font-lock-type-face nil :foreground "burlywood3")
 (set-face-attribute 'font-lock-variable-name-face nil :foreground "orange")
+(set-face-attribute 'font-lock-keyword-face nil :foreground "#eca72c")
 
 (defun tiago-custom-swift-mode ()
   (set-face-attribute 'font-lock-function-name-face nil :foreground "white")

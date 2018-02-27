@@ -21,6 +21,30 @@
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
 
+(defun air--config-evil ()
+  (setq evil-normal-state-cursor '(box "green")
+	evil-insert-state-cursor '(box "red"))
+
+  (evil-define-key 'normal global-map (kbd "C-h")  'windmove-left)
+  (evil-define-key 'normal global-map (kbd "C-l") 'windmove-right)
+  (evil-define-key 'normal global-map (kbd "C-k")    'windmove-up)
+  (evil-define-key 'normal global-map (kbd "C-j")  'windmove-down)
+  (evil-define-key 'insert global-map (kbd "C-SPC") 'company-complete))
+
+(use-package evil
+  :ensure t
+  :config
+  (add-hook 'evil-mode-hook 'air--config-evil)
+  (evil-mode 1))
+
+(use-package nlinum-relative
+  :ensure t
+  :config
+  (nlinum-relative-setup-evil)
+  (setq nlinum-relative-redisplay-delay 0)
+  (setq nlinum-relative-offset 1)
+  (add-hook 'prog-mode-hook #'nlinum-relative-mode))
+
 (setq explicit-shell-file-name "/bin/zsh")
 
 (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
@@ -29,6 +53,11 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.gradle$" . java-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 
 ;; HACKS
 (defun my-minibuffer-setup-hook () "Increase GC cons threshold."
@@ -39,6 +68,12 @@
 
 (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
 (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
+
+;; Windows performance tweaks
+(when (boundp 'w32-pipe-read-delay)
+  (setq w32-pipe-read-delay 0))
+(when (boundp 'w32-pipe-buffer-size) ;; Set the buffer size to 64K on Windows (from the original 4K)
+  (setq irony-server-w32-pipe-buffer-size (* 64 1024)))
 
 (setq undo-limit 20000000)
 (setq undo-strong-limit 40000000)

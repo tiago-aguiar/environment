@@ -60,19 +60,6 @@
   (end-of-buffer))
 
 
-(require 'use-package)
-(require 'taguiar-settings)
-(require 'fic-mode)
-(require 'taguiar-gui)
-(require 'taguiar-theme)
-(require 'markdown)
-(require 'evil-mode)
-(require 'jedi-python)
-(require 'completion)
-(require 'taguiar-orgmode)
-(require 'taguiar-java)
-(require 'taguiar-swift)
-
 (when tiago-linux
   (setq tiago-makescript "./build.linux")
   (message "Linux running")
@@ -81,7 +68,22 @@
 
 (when tiago-mac
   (message "MacOSX running")
+  (setq tiago-eclipse-dir "~/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse")
+  (setq tiago-eclim-exe "~/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse/eclim")
   )
+
+
+(require 'use-package)
+(require 'taguiar-settings)
+(require 'fic-mode)
+(require 'taguiar-gui)
+(require 'taguiar-theme)
+(require 'jedi-python)
+(require 'taguiar-completion)
+(require 'taguiar-orgmode)
+(require 'taguiar-markdown)
+(require 'taguiar-java)
+(require 'taguiar-swift)
 
 ;; php
 (use-package php-mode
@@ -91,35 +93,9 @@
 (use-package web-mode
   :ensure t
   :config
-  (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-  (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
   (add-hook 'web-mode-hook 'remove-dos-eol))
 
 ;; (elpy-enable)
-
-;; check OS type
-;; (cond
-;;  ((string-equal system-type "windows-nt") ; Microsoft Windows
-;;   (progn
-;;     (message "Microsoft Windows")
-;;     )
-;;   )
-;; 
-;;  ((string-equal system-type "darwin") ; Mac OS X
-;;   (progn
-;;     (message "Mac OS X")
-;;     ;; (set-face-attribute 'default nil :font "Source Code Pro 12")
-;;     )
-;;   )
-;; 
-;;  ((string-equal system-type "gnu/linux") ; linux
-;;   (progn
-;;     (message "Linux")
-;;     (elpy-use-ipython)
-;;     )
-;;   )
-;; 
-;;  ) ;; end cond
 
 ;; use flycheck not flymake with elpy
 ;; (when (require 'flycheck nil t)

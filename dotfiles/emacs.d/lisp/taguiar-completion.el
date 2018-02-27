@@ -1,4 +1,4 @@
-;; completion.el
+;; taguiar-completion.el
 
 (use-package irony
   :ensure t
@@ -14,12 +14,6 @@
   (add-hook 'irony-mode-hook 'my-irony-mode-hook)
   (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
 
-;; Windows performance tweaks
-(when (boundp 'w32-pipe-read-delay)
-  (setq w32-pipe-read-delay 0))
-(when (boundp 'w32-pipe-buffer-size) ;; Set the buffer size to 64K on Windows (from the original 4K)
-  (setq irony-server-w32-pipe-buffer-size (* 64 1024)))
-
 (use-package company
   :ensure t
   :defer t
@@ -32,9 +26,6 @@
     :ensure t
     :defer t)
   (use-package company-sourcekit
-    :ensure t
-    :defer t)
-  (use-package company-emacs-eclim
     :ensure t
     :defer t)
   (setq company-idle-delay              nil
@@ -69,5 +60,4 @@
   :config
   (autopair-global-mode t))
 
-(provide 'completion)
-;; completion.el ends here
+(provide 'taguiar-completion)

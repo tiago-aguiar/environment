@@ -1,4 +1,4 @@
-;; markdown.el
+;; taguiar-markdown.el
 ;; all configurations about markdown
 
 (use-package flymd
@@ -17,5 +17,5 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
-(provide 'markdown)
+(provide 'taguiar-markdown)
 ;; markdown.el ends here
