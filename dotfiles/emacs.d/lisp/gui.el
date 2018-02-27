@@ -11,7 +11,7 @@
 (setq tiago-log-file "~/log.txt")
 
 (split-window-horizontally)
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (setq inhibit-startup-message t
       inhibit-splash-screen t

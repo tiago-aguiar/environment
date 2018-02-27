@@ -1,33 +1,25 @@
 ;; completion.el
 
-;; == irony-mode ==
 (use-package irony
   :ensure t
   :defer t
-  :init
+  :init ;; before loaded package
   (add-hook 'c++-mode-hook 'irony-mode)
   (add-hook 'c-mode-hook 'irony-mode)
   (add-hook 'objc-mode-hook 'irony-mode)
-  :config
-  ;; replace the completion-at-point and complete-symbol bindings in
-  ;; irony-mode's buffers by irony-mode's function
+  :config ;; after loaded package
   (defun my-irony-mode-hook ()
-    (define-key irony-mode-map [remap completion-at-point]
-      'irony-completion-at-point-async)
-    (define-key irony-mode-map [remap complete-symbol]
-      'irony-completion-at-point-async))
+    (define-key irony-mode-map [remap completion-at-point] 'irony-completion-at-point-async)
+    (define-key irony-mode-map [remap complete-symbol] 'irony-completion-at-point-async))
   (add-hook 'irony-mode-hook 'my-irony-mode-hook)
   (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options))
 
 ;; Windows performance tweaks
-;;
 (when (boundp 'w32-pipe-read-delay)
   (setq w32-pipe-read-delay 0))
-;; Set the buffer size to 64K on Windows (from the original 4K)
-(when (boundp 'w32-pipe-buffer-size)
+(when (boundp 'w32-pipe-buffer-size) ;; Set the buffer size to 64K on Windows (from the original 4K)
   (setq irony-server-w32-pipe-buffer-size (* 64 1024)))
 
-;; == company-mode ==
 (use-package company
   :ensure t
   :defer t
@@ -40,6 +32,9 @@
     :ensure t
     :defer t)
   (use-package company-sourcekit
+    :ensure t
+    :defer t)
+  (use-package company-emacs-eclim
     :ensure t
     :defer t)
   (setq company-idle-delay              nil
