@@ -21,8 +21,7 @@
 ;; (defvar myPackages
 ;;   '(better-defaults
 ;;     epc
-;;     elpy
-;;     flycheck
+;;     elpy ;;     flycheck
 ;;     jedi
 ;;     py-autopep8))
 
@@ -64,10 +63,14 @@
   (setq tiago-makescript "./build.linux")
   (message "Linux running")
   (display-battery-mode 1)
+  (add-to-list 'default-frame-alist '(fullscreen . maximized))
+  (setq x-select-enable-clipboard nil) ;; fix error clipboard
+  (setq tiago-eclipse-dir "~/eclipse/jee-oxygen/eclipse")
   )
 
 (when tiago-mac
   (message "MacOSX running")
+  (setq x-select-enable-clipboard t) ;; fix error clipboard
   (setq tiago-eclipse-dir "~/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse")
   (setq tiago-eclim-exe "~/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse/eclim")
   )
@@ -115,11 +118,6 @@
  '(custom-safe-themes
    (quote
     ("a3d40cd364b9a6cc2c33be39b35d7a5bbf872f8943f170bb17bf6156c2674921" default)))
- '(eclim-eclipse-dirs
-   (quote
-    ("/Users/tiagoaguiar/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse")))
- '(eclim-executable
-   "/Users/tiagoaguiar/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse/eclim")
  '(package-selected-packages
    (quote
     (web-server web-mode uuidgen use-package telephone-line swift-mode py-autopep8 powerline php-mode org-bullets nlinum-relative markdown-mode jedi ido-vertical-mode gruvbox-theme gradle-mode flymd flycheck evil elpy diff-hl company-sourcekit company-irony-c-headers company-irony better-defaults autopair))))

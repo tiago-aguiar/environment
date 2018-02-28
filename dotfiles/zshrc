@@ -5,7 +5,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 ANDROID_HOME=""
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
-    ANDROID_HOME=/home/tiago/android/sdk
+    ANDROID_HOME=/home/tiago/android-sdks
+    export ANDROID_SDK_ROOT=/home/tiago/android-sdks
     export PATH=$PATH:/home/tiago/swift-4.0.3-RELEASE-ubuntu16.10/usr/bin
     export PATH=$PATH:/opt/firefox
 

@@ -2,7 +2,6 @@
 (setq frame-title-format "Tiago Emacs")
 
 (split-window-horizontally)
-;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (setq inhibit-startup-message t
       inhibit-splash-screen t
@@ -58,14 +57,14 @@
   (powerline-center-evil-theme)
   (use-package telephone-line
     :ensure t)
-
-  (require 'telephone-line)
+  (require 'telephone-line-config)
   (setq telephone-line-primary-left-separator 'telephone-line-cubed-left
         telephone-line-secondary-left-separator 'telephone-line-cubed-hollow-left
-        telephone-line-cubed-right
-        telephone-line-cubed-hollow-right)
+        telephone-line-primary-right-separator 'telephone-line-cubed-right
+        telephone-line-secondary-right-separator 'telephone-line-cubed-hollow-right)
   (setq telephone-line-height 24
         telephone-line-evil-use-short-tag t)
-  (telephone-line-mode 1))
+  (telephone-line-evil-config)
+  )
 
 (provide 'taguiar-gui)

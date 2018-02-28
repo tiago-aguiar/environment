@@ -3,14 +3,21 @@
 (setq make-backup-files nil) ;; disable backup
 (defalias 'yes-or-no-p 'y-or-n-p) ;; replace yes - y
 
+(defun taguiar-eval-buffer ()
+  (interactive)
+  (eval-buffer)
+  (message "buffer reloaded")
+  )
+
 (global-set-key [f1] 'shell)
+(global-set-key [f12] 'taguiar-eval-buffer)
 (define-key global-map "\et" 'load-todo)
 (define-key global-map "\ef" 'find-file) ;; M-x F
 (define-key global-map "\eF" 'find-file-other-window) ;; M-x SHIFT F
 (define-key global-map "\eb" 'ido-switch-buffer) ;; M-x B
 (define-key global-map "\eB" 'ido-switch-buffer-other-window) ;; M-x SHIFT B
 (define-key global-map "\ek" 'ido-kill-buffer) ;; M-x K
-(define-key global-map "\eT" 'load-log)  
+(define-key global-map "\el" 'load-log)  
 
 ;; keyboard
 (when (fboundp 'windmove-default-keybindings)
@@ -22,8 +29,8 @@
 (global-set-key (kbd "C-c <down>")  'windmove-down)
 
 (defun air--config-evil ()
-  (setq evil-normal-state-cursor '(box "green")
-	evil-insert-state-cursor '(box "red"))
+  (setq evil-normal-state-cursor '(box "red")
+	evil-insert-state-cursor '(box "green"))
 
   (evil-define-key 'normal global-map (kbd "C-h")  'windmove-left)
   (evil-define-key 'normal global-map (kbd "C-l") 'windmove-right)
@@ -77,7 +84,5 @@
 
 (setq undo-limit 20000000)
 (setq undo-strong-limit 40000000)
-(setq x-select-enable-clipboard t) ;; fix error clipboard
-;;(setq x-select-enable-clipboard nil) ;; fix error clipboard
 
 (provide 'taguiar-settings)
