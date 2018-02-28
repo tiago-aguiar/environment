@@ -74,6 +74,7 @@
   (setq x-select-enable-clipboard t) ;; fix error clipboard
   (setq tiago-eclipse-dir "~/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse")
   (setq tiago-eclim-exe "~/eclipse/java-oxygen/Eclipse.app/Contents/Eclipse/eclim")
+  (setq company-backends '((company-irony company-sourcekit)))
   )
 
 

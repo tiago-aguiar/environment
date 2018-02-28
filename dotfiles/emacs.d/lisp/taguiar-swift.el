@@ -2,7 +2,6 @@
 
 (use-package swift-mode
   :ensure t
-  :config
-  (setq company-backends '((company-irony company-sourcekit))))
+  :config)
 
 (provide 'taguiar-swift)
