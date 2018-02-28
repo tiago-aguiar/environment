@@ -36,7 +36,7 @@
   :config
   (add-hook 'java-mode-hook 'lambda() (gradle-mode 1)))
 
-(defun taguiar-create-projectj ()
+(defun taguiar-create-project ()
   (interactive)
   (shell-command-on-region
    (point-min) (point-max)

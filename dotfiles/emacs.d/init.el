@@ -61,6 +61,7 @@
 
 (when tiago-linux
   (setq tiago-makescript "./build.linux")
+  (setq tiago-start-eclim "~/bin/start_eclim.zsh")
   (message "Linux running")
   (display-battery-mode 1)
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
