@@ -120,9 +120,11 @@
  '(custom-safe-themes
    (quote
     ("a3d40cd364b9a6cc2c33be39b35d7a5bbf872f8943f170bb17bf6156c2674921" default)))
+ '(eclim-eclipse-dirs (quote (tiago-eclipse-dir)))
+ '(eclim-executable tiago-eclim-exe)
  '(package-selected-packages
    (quote
-    (web-server web-mode uuidgen use-package telephone-line swift-mode py-autopep8 powerline php-mode org-bullets nlinum-relative markdown-mode jedi ido-vertical-mode gruvbox-theme gradle-mode flymd flycheck evil elpy diff-hl company-sourcekit company-irony-c-headers company-irony better-defaults autopair))))
+    (shell-pop web-server web-mode uuidgen use-package telephone-line swift-mode py-autopep8 powerline php-mode org-bullets nlinum-relative markdown-mode jedi ido-vertical-mode gruvbox-theme gradle-mode flymd flycheck evil elpy diff-hl company-sourcekit company-irony-c-headers company-irony better-defaults autopair))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

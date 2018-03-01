@@ -16,7 +16,7 @@
 (define-key global-map "\eF" 'find-file-other-window) ;; M-x SHIFT F
 (define-key global-map "\eb" 'ido-switch-buffer) ;; M-x B
 (define-key global-map "\eB" 'ido-switch-buffer-other-window) ;; M-x SHIFT B
-(define-key global-map "\ek" 'ido-kill-buffer) ;; M-x K
+(define-key global-map "\eK" 'ido-kill-buffer) ;; M-x K
 (define-key global-map "\el" 'load-log)  
 
 ;; keyboard
@@ -51,6 +51,9 @@
   (setq nlinum-relative-redisplay-delay 0)
   (setq nlinum-relative-offset 1)
   (add-hook 'prog-mode-hook #'nlinum-relative-mode))
+
+(use-package shell-pop
+  :ensure t)
 
 (setq explicit-shell-file-name "/bin/zsh")
 
