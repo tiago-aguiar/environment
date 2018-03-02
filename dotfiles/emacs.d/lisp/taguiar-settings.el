@@ -55,7 +55,9 @@
 (use-package shell-pop
   :ensure t)
 
-(setq explicit-shell-file-name "/bin/zsh")
+(when (not tiago-win32)
+  (setq explicit-shell-file-name "/bin/zsh")
+  )
 
 (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))

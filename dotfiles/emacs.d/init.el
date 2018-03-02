@@ -5,6 +5,9 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 
+(setq tiago-mac (string-equal system-type "darwin"))
+(setq tiago-linux (string-equal system-type "gnu/linux"))
+(setq tiago-win32 (not (or tiago-mac tiago-linux)))
 
 (unless (package-installed-p 'use-package) ;; Bootstrap use-package
   (package-refresh-contents)
@@ -29,10 +32,6 @@
 ;;     (unless (package-installed-p package)
 ;;       (package-install package)))
 ;;       myPackages)
-
-(setq tiago-mac (string-equal system-type "darwin"))
-(setq tiago-linux (string-equal system-type "gnu/linux"))
-(setq tiago-win32 (not (or tiago-mac tiago-linux)))
 
 (setq tiago-todo-file "~/todo.org")
 (setq tiago-log-file "~/log.txt")

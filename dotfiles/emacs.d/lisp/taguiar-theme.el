@@ -12,7 +12,7 @@
 
 ;; (set-face-attribute 'default nil :font "Source Code Pro 10")
 ;; (set-face-attribute 'default nil :font "Source Code Pro Light 11")
-;; (set-face-attribute 'default nil :font "Liberation Mono 10")
+(set-face-attribute 'default nil :font "Liberation Mono 10")
 
 (set-face-attribute 'font-lock-builtin-face nil :foreground "#DAB98F")
 (set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
