@@ -33,7 +33,7 @@
  	company-show-numbers            t
  	company-tooltip-limit           20
  	company-dabbrev-downcase        nil
- 	company-backends                '((company-irony-c-headers company-irony company-gtags)))
+ 	company-backends                '((company-irony-c-headers company-sourcekit company-irony company-gtags)))
   (define-key company-active-map (kbd "ESC") 'company-abort)
   (define-key company-active-map [tab] 'company-complete-common-or-cycle)
   (define-key company-active-map (kbd "C-j") 'company-select-next)

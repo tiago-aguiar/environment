@@ -27,9 +27,7 @@
     )
   (use-package company-emacs-eclim
     :ensure t
-    :defer t)
-  (eclim-toggle-print-debug-messages)
-  )
+    :defer t))
 
 (use-package gradle-mode
   :ensure t
