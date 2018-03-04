@@ -21,17 +21,17 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; (defvar myPackages
-;;   '(better-defaults
-;;     epc
-;;     elpy ;;     flycheck
-;;     jedi
-;;     py-autopep8))
+(defvar myPackages
+  '(better-defaults
+    epc
+    elpy ;;     flycheck
+    jedi
+    py-autopep8))
 
-;; (mapc #'(lambda (package)
-;;     (unless (package-installed-p package)
-;;       (package-install package)))
-;;       myPackages)
+(mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
 
 (setq tiago-todo-file "~/todo.org")
 (setq tiago-log-file "~/log.txt")
@@ -64,7 +64,7 @@
   (message "Linux running")
   (display-battery-mode 1)
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
-  (setq x-select-enable-clipboard nil) ;; fix error clipboard
+  (setq x-select-enable-clipboard t) ;; fix error clipboard
   (setq tiago-eclipse-dir "~/eclipse/jee-oxygen/eclipse")
   )
 
@@ -99,16 +99,16 @@
   :config
   (add-hook 'web-mode-hook 'remove-dos-eol))
 
-;; (elpy-enable)
+(elpy-enable)
 
 ;; use flycheck not flymake with elpy
-;; (when (require 'flycheck nil t)
-;;   (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 ;; enable autopep8 formatting on save
-;; (require 'py-autopep8)
-;; (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
 (provide 'init)
 (custom-set-variables
