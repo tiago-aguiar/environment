@@ -1,4 +1,4 @@
-;; org.el
+;; taguiar-orgmode.el
 ;; Essentials for Org Mode 
 
 (use-package org-bullets
@@ -10,7 +10,4 @@
 
 (setq org-log-done 'time) ;; set CLOSED when done
 
-;;(require 'org-bullets)
-
-(provide 'my-org-mode)
-;; org.el ends here
+(provide 'taguiar-orgmode)
