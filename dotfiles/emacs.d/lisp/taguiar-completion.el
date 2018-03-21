@@ -54,6 +54,8 @@
   :config
   (yas-global-mode 1))
 
+;; HINT: yas-describe-tables -> show all snippets for activated mode
+
 ;; brackets
 (use-package autopair
   :ensure t

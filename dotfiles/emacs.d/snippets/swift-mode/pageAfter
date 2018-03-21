@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: pageAfter
+# key: pageAfter
+# --
+func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+     $0
+}
