@@ -59,6 +59,13 @@
   (setq explicit-shell-file-name "/bin/zsh")
   )
 
+
+(use-package haml-mode
+  :ensure t)
+
+(use-package sass-mode
+  :ensure t)
+
 (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
@@ -70,6 +77,9 @@
 (add-to-list 'auto-mode-alist '("\\.sass\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.css\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.sass$" . sass-mode))
+
+
 
 ;; HACKS
 (defun my-minibuffer-setup-hook () "Increase GC cons threshold."
