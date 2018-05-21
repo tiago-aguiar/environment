@@ -13,7 +13,7 @@
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-  (load-theme 'doom-peacock t)
+  (load-theme 'doom-one t)
 
   (doom-themes-visual-bell-config)
 
@@ -55,7 +55,13 @@
   (set-face-attribute 'font-lock-comment-face nil :foreground "yellow")
 )
 
+(defun tiago-custom-org-mode ()
+  (set-face-attribute 'default nil :font "Liberation Mono 12")
+  (load-theme 'doom-one t)
+)
+
 (add-hook 'swift-mode-hook 'tiago-custom-swift-mode)
+(add-hook 'org-mode-hook 'tiago-custom-org-mode)
 ;; (add-hook 'python-mode-hook 'tiago-custom-python-mode)
 
 ;; (set-face-background 'hl-line "midnight blue")
