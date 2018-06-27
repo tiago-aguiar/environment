@@ -1,7 +1,7 @@
 ;; taguiar-gui.el
 (setq frame-title-format "Tiago Emacs")
 
-(split-window-horizontally)
+;; (split-window-horizontally)
 
 (setq inhibit-startup-message t
       inhibit-splash-screen t

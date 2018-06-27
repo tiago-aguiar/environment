@@ -62,7 +62,7 @@
 
 (add-hook 'swift-mode-hook 'tiago-custom-swift-mode)
 (add-hook 'org-mode-hook 'tiago-custom-org-mode)
-;; (add-hook 'python-mode-hook 'tiago-custom-python-mode)
+(add-hook 'python-mode-hook 'tiago-custom-python-mode)
 
 ;; (set-face-background 'hl-line "midnight blue")
 
