@@ -13,7 +13,12 @@
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-  (load-theme 'doom-one t)
+  (if (display-graphic-p)
+      (load-theme 'doom-one t)
+    (load-theme 'gruvbox-dark-medium t)
+    (add-to-list 'default-frame-alist '(foreground-color . "#DAB98F"))
+    (add-to-list 'default-frame-alist '(background-color . "#000")))
+
 
   (doom-themes-visual-bell-config)
 
