@@ -9,6 +9,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export ANDROID_SDK_ROOT=/home/tiago/android-sdks
     export PATH=$PATH:/home/tiago/swift-4.0.3-RELEASE-ubuntu16.10/usr/bin
     export PATH=$PATH:/opt/firefox
+    ZSH_DISABLE_COMPFIX=true
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 
@@ -16,7 +17,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export PATH=$PATH:/Library/TeX/texbin
 
 elif [[ "$OSTYPE" == "win32" ]]; then
-    
 fi
 
 export ANDROID_HOME
@@ -77,8 +77,11 @@ ZSH_THEME="lambda"
 plugins=(git)
 
 alias pip='noglob pip'
+alias homewin='cd $HOME/..'    
 
 source $ZSH/oh-my-zsh.sh
+cd $HOME
+export DISPLAY=:0.0
 
 # User configuration
 
