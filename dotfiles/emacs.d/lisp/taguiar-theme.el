@@ -13,12 +13,11 @@
   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
-  (if (display-graphic-p)
-      (load-theme 'doom-one t)
-    (load-theme 'gruvbox-dark-medium t)
-    (add-to-list 'default-frame-alist '(foreground-color . "#DAB98F"))
-    (add-to-list 'default-frame-alist '(background-color . "#000")))
-
+  ;; (if (display-graphic-p)
+  (load-theme 'doom-molokai t)
+    ;; (load-theme 'doom-one t)
+  (add-to-list 'default-frame-alist '(foreground-color . "#DAB98F"))
+  (add-to-list 'default-frame-alist '(background-color . "#000"))
 
   (doom-themes-visual-bell-config)
 
@@ -33,12 +32,10 @@
 ;; (set-face-attribute 'default nil :font "Source Code Pro 10")
 ;; (set-face-attribute 'default nil :font "Source Code Pro Light 11")
 (when tiago-win32
-  (set-face-attribute 'default nil :font "Liberation Mono 10")
-  )
+  (set-face-attribute 'default nil :font "Liberation Mono 11"))
 
 (when tiago-mac
-  (set-face-attribute 'default nil :font "Liberation Mono 12")
-  )
+  (set-face-attribute 'default nil :font "Liberation Mono 12"))
 
 ;; (set-face-attribute 'font-lock-builtin-face nil :foreground "#DAB98F")
 ;; (set-face-attribute 'font-lock-comment-face nil :foreground "gray50")
@@ -51,19 +48,17 @@
 ;; (set-face-attribute 'font-lock-keyword-face nil :foreground "#eca72c")
 
 (defun tiago-custom-swift-mode ()
-  (set-face-attribute 'font-lock-function-name-face nil :foreground "white")
-  (set-face-attribute 'font-lock-keyword-face nil :foreground "#eca72c")
-  (set-face-attribute 'font-lock-preprocessor-face nil :foreground "red")
+  ;; (set-face-attribute 'font-lock-function-name-face nil :foreground "white")
+  ;; (set-face-attribute 'font-lock-keyword-face nil :foreground "#eca72c")
+  ;; (set-face-attribute 'font-lock-preprocessor-face nil :foreground "red")
 )
 
 (defun tiago-custom-python-mode ()
-  (set-face-attribute 'font-lock-comment-face nil :foreground "yellow")
+  ;; (set-face-attribute 'font-lock-comment-face nil :foreground "yellow")
 )
 
 (defun tiago-custom-org-mode ()
-  (set-face-attribute 'default nil :font "Liberation Mono 12")
-  (load-theme 'doom-one t)
-)
+  (set-face-attribute 'default nil :font "Liberation Mono 11"))
 
 (add-hook 'swift-mode-hook 'tiago-custom-swift-mode)
 (add-hook 'org-mode-hook 'tiago-custom-org-mode)

@@ -6,8 +6,7 @@
 (defun taguiar-eval-buffer ()
   (interactive)
   (eval-buffer)
-  (message "buffer reloaded")
-  )
+  (message "buffer reloaded"))
 
 (global-set-key [f1] 'shell)
 (global-set-key [f12] 'taguiar-eval-buffer)
@@ -56,8 +55,7 @@
   :ensure t)
 
 (when (not tiago-win32)
-  (setq explicit-shell-file-name "/bin/zsh")
-  )
+  (setq explicit-shell-file-name "/bin/zsh"))
 
 
 (use-package haml-mode

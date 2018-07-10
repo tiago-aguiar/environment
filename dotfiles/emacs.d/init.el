@@ -86,7 +86,7 @@
 (require 'taguiar-completion)
 (require 'taguiar-orgmode)
 (require 'taguiar-markdown)
-(require 'taguiar-java)
+;; (require 'taguiar-java)
 (require 'taguiar-swift)
 
 ;; php
@@ -114,14 +114,6 @@
     python-shell-interpreter-args "--simple-prompt -i")
 
 (provide 'init)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (magit auto-yasnippet shell-pop web-server web-mode uuidgen use-package telephone-line swift-mode py-autopep8 powerline php-mode org-bullets nlinum-relative markdown-mode jedi ido-vertical-mode gruvbox-theme gradle-mode flymd flycheck evil elpy diff-hl company-sourcekit company-irony-c-headers company-irony better-defaults autopair))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

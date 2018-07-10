@@ -1,5 +1,15 @@
 ;; taguiar-gui.el
-(setq frame-title-format "Tiago Emacs")
+(when tiago-mac
+  (setq frame-title-format "Emacs running on [Mac OSX]"))
+
+
+(when tiago-linux
+  (setq frame-title-format "Emacs running on [Linux]"))
+
+
+(when (not (or tiago-mac tiago-linux))
+  (setq frame-title-format "Emacs running on [Windows]"))
+
 
 ;; (split-window-horizontally)
 
@@ -47,7 +57,7 @@
                       :foreground "white")
   (set-face-attribute 'ido-vertical-match-face nil
                       :foreground "#b00000")
-  (ido-vertical-mode 1)
+  ;; (ido-vertical-mode 1) ;; enable vertical ido search
   (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 
 ;; powerline (bar)
