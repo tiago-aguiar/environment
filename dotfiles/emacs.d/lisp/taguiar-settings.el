@@ -57,6 +57,8 @@
 (when (not tiago-win32)
   (setq explicit-shell-file-name "/bin/zsh"))
 
+(when tiago-win32
+  (add-hook 'emacs-startup-hook 'toggle-frame-maximized))
 
 (use-package haml-mode
   :ensure t)

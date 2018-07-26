@@ -8,6 +8,8 @@
 (setq tiago-mac (string-equal system-type "darwin"))
 (setq tiago-linux (string-equal system-type "gnu/linux"))
 (setq tiago-win32 (not (or tiago-mac tiago-linux)))
+(setq user-full-name "Tiago Aguiar")
+(setq user-mail-address "suporte@moonjava.com.br")
 
 (unless (package-installed-p 'use-package) ;; Bootstrap use-package
   (package-refresh-contents)
@@ -123,3 +125,28 @@
  '(org-level-2 ((t (:inherit default))))
  '(org-todo ((t (:foreground "red" :weight bold))))
  '(secondary-selection ((t (:background "black")))))
+
+(require 'autoinsert)
+
+(defun my/autoinsert-yas-expand ()
+  "Replace text in yasnippet template."
+  (yas-expand-snippet (buffer-string) (point-min) (point-max)))
+
+(custom-set-variables
+ '(auto-insert 'other)
+ '(auto-insert-directory "~/environment/dotfiles/emacs.d/insert/")
+ ;;'(user-full-name "Tiago Aguiar")
+ )
+
+(auto-insert-mode)
+(setq auto-insert-query nil)
+
+(add-to-list 'auto-insert-alist '(("\\.py\\'" . "Python souce code header") .
+                                  ["template.py" my/autoinsert-yas-expand]))
+
+(add-to-list 'auto-insert-alist '(("\\.\\([Hh]\\|hh\\|hpp\\)\\'" . "C / C++ header") . 
+                                  ["template.h" my/autoinsert-yas-expand]))
+
+(add-to-list 'auto-insert-alist '(("\\.\\([Cc]\\|cc\\|cpp\\)\\'" . "C / C++ program") .
+                                  ["template.c" my/autoinsert-yas-expand]))
+
