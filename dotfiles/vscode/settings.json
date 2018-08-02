@@ -1,0 +1,25 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.sideBar.location": "left",
+    "git.path": "C:\\Program Files\\cmder\\vendor\\git-for-windows\\cmd\\git.exe",
+    "editor.cursorStyle": "line",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors": {
+        "normal": ["#8FBCBB", "#433C5E"],
+        "insert": "#FF0000", // "#BF616A",
+        "visual": "#B46EAD",
+        "visualline": "#B48EAD",
+        "visualblock": "#A3BE8C",
+        "replace": "#D08770"
+    },
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#8FBCBB",
+        "statusBar.noFolderBackground": "#8FBCBB",
+        "statusBar.debuggingBackground": "#8FBCBB",
+        "statusBar.foreground": "#433C5E"
+    },
+    "editor.minimap.enabled": false,
+    "workbench.activityBar.visible": false,
+    "editor.fontFamily": "'Liberation Mono', Consolas, 'Courier New', monospace",
+    "workbench.colorTheme": "Ayu Dark"
+}
