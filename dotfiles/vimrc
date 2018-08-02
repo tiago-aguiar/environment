@@ -1,0 +1,27 @@
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+set nocompatible			" be iMproved, required
+filetype off				" required
+
+" ========== Vundle =============
+set rtp+=~/.vim/bundle/Vundle.vim 	" runtime path initialize vundle
+call vundle#begin()			" call vundle#begin('~/some/path/here')
+
+" ======= Plugins ==========
+Plugin 'VundleVim/Vundle.vim'		" required
+Plugin 'ctrlpvim/ctrlp.vim'		" find files
+
+call vundle#end()            		" required
+filetype plugin indent on    		" required
+
+" ======= CtrlP =========
+" ignore files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
