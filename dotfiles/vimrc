@@ -2,6 +2,10 @@
 
 set nocompatible			" be iMproved, required
 filetype off				" required
+syntax on
+set number relativenumber
+
+:let mapleader = "\e"
 
 " ========== Vundle =============
 set rtp+=~/.vim/bundle/Vundle.vim 	" runtime path initialize vundle
@@ -11,17 +15,35 @@ call vundle#begin()			" call vundle#begin('~/some/path/here')
 Plugin 'VundleVim/Vundle.vim'		" required
 Plugin 'ctrlpvim/ctrlp.vim'		" find files
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'dracula/vim'
+Plugin 'joshdick/onedark.vim'
+Plugin 'sjl/badwolf'
+
 call vundle#end()            		" required
 filetype plugin indent on    		" required
+
+" ========= Theme =======
+color badwolf
 
 " ======= CtrlP =========
 " ignore files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+
+let g:airline#extensions#tabline#enabled = 1
+
+
+" ====== KeyMap =======
+:map <leader>b :CtrlPBuffer<CR>
+
