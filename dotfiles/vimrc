@@ -13,6 +13,8 @@ Plugin 'ctrlpvim/ctrlp.vim'		    " find files
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'scrooloose/syntastic'
+
 Plugin 'dracula/vim'
 Plugin 'joshdick/onedark.vim'
 Plugin 'sjl/badwolf'
