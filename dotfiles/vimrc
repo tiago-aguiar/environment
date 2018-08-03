@@ -1,19 +1,14 @@
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-set nocompatible			" be iMproved, required
-filetype off				" required
-syntax on
-set number relativenumber
-
-:let mapleader = "\e"
-
-" ========== Vundle =============
+" Vundle
+filetype off				        " required
 set rtp+=~/.vim/bundle/Vundle.vim 	" runtime path initialize vundle
-call vundle#begin()			" call vundle#begin('~/some/path/here')
+call vundle#begin()			        " call vundle#begin('~/some/path/here')
 
-" ======= Plugins ==========
+
+" Plugins
 Plugin 'VundleVim/Vundle.vim'		" required
-Plugin 'ctrlpvim/ctrlp.vim'		" find files
+Plugin 'ctrlpvim/ctrlp.vim'		    " find files
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -25,11 +20,35 @@ Plugin 'sjl/badwolf'
 call vundle#end()            		" required
 filetype plugin indent on    		" required
 
-" ========= Theme =======
+
+
+set nocompatible			" be iMproved, required
+syntax on
+set nowrap				    " ?????
+set encoding=utf8
+
+" lines
+set number relativenumber
+
+" tabs
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+
+" status line
+set laststatus=2            " ???
+
+" cursor
+set cursorline              " highlight current
+
+" theme
 color badwolf
 
-" ======= CtrlP =========
-" ignore files
+:let mapleader = "\e"
+
+
+" CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
@@ -41,9 +60,9 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+" Vim-Airline Configuration
 let g:airline#extensions#tabline#enabled = 1
 
-
-" ====== KeyMap =======
+" KeyMaps
 :map <leader>b :CtrlPBuffer<CR>
 
